@@ -61,6 +61,12 @@
         }
     }
     
+    &__link{
+        text-decoration: none;
+        color: $text--main;
+        font-weight: 500;
+    }
+
     &__link:hover::before{
         content: url('../img/highlight.svg');
         position:absolute;
