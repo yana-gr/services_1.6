@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body{
+    min-width: 320px;
+    margin:0 auto;
+    padding:0;
+    background-color: $background-color--main;
+    font-family: "TT Lakes", sans-serif;
+    overflow-x: hidden;
+}
+.container{
+    margin: 0 auto;
+    width: 92%;
+}
+
+button:hover{
+    filter: opacity(50%)
+}
+

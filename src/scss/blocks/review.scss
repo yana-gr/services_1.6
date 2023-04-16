@@ -1,0 +1,26 @@
+.review{
+
+  display: none;
+
+  &__text{
+    display:inline-block;
+    color:$text--other;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    padding-left: 20px;
+  }
+  &__text:hover{
+    color: $text--main;
+  }
+
+  &__text:active{
+    color:$link--active;
+  }
+
+  &__text:active, 
+  &__text:hover,
+  &__text {
+    text-decoration: none;
+  }
+}

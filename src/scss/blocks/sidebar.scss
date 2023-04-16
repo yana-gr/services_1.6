@@ -1,0 +1,85 @@
+.sidebar{
+
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 100%;
+    background-color: $background-color--other;
+    box-shadow: 16px 0 52px $shadow-color--first,
+                -2px 0px 4px $shadow-color--second;
+    transition: all 0.3s ease 0s;
+    z-index: 50;
+    overflow: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    button{
+        padding: 0;
+        border: none;
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    &__header{
+        display:flex;
+        justify-content: flex-start;
+        align-items:center;
+        flex-wrap:nowrap;
+        margin: 0 auto;
+        height: 88px;
+        position: fixed;
+        background-color: $background-color--other;
+        z-index: 4;
+    }
+    &__label{
+        margin-right: auto;
+        margin-left: 16.73px;
+    }
+    
+    &__search{
+        margin-left: 90px;
+    }
+    
+    &__list{
+        display: flex;
+        flex-direction: column;
+        padding-top: 110px;
+
+        li{
+            list-style: none;
+            font-size: 16px;
+            padding-bottom: 32px;
+        }
+    }
+    
+    &__link:hover::before{
+        content: url('../img/highlight.svg');
+        position:absolute;
+        left:0px;
+        margin-top: -10px;
+        z-index: 2;
+    }
+    &__link:hover{
+        color: $text--other;
+    }
+
+    &--show {
+        display:flex;
+    }
+
+    &.active{
+        display:flex;
+    }
+
+    
+}
+

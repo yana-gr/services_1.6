@@ -1,13 +1,6 @@
 
 import './variables'
 
-// import Swiper bundle with all modules installed
-import Swiper from 'swiper/bundle';
-
-// import styles bundle
-import 'swiper/css/bundle';
-
-
 // Слайдер
 if (document.body.clientWidth < 767) {
   const swiper = new Swiper('.brands__container', {

@@ -1,0 +1,63 @@
+.header{
+    background: $background-color--other;
+    border-bottom: 1px solid $border-color--main;  
+    position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    z-index: 50;
+
+    &__raw{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        flex-wrap:nowrap;
+        margin: 0 auto;
+        height: 88px;
+    }
+
+    &__label{
+        margin-left: 16px;
+        margin-right: auto;
+    }
+
+    &__burger{
+        padding: 0;
+        border: none;
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    &__actions{
+        display:flex;
+        justify-content:space-between;
+        list-style-type: none;
+
+        button{
+            padding: 0;
+            border: none;
+            font: inherit;
+            color: inherit;
+            background-color: transparent;
+            cursor: pointer;
+            margin-left: 16px;
+        }
+    }
+    
+    &__repair::before {
+        content: url('../img/divider.svg');
+        position:relative;
+        margin-left: 4px;
+        margin-right: 20px;
+        z-index: 2;
+    }
+
+    &__call,
+    &__chat,
+    &__profile{
+        display: none;
+    }
+}
+
