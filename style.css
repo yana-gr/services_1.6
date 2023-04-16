@@ -232,6 +232,78 @@ button:hover {
     .feedback {
       visibility: visible; } }
 
+.modal-call {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100%;
+  background-color: #FFFFFF;
+  box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02);
+  transition: all 0.3s ease 0s;
+  z-index: 12;
+  white-space: nowrap;
+  scrollbar-width: none; }
+  .modal-call .container {
+    width: 90%; }
+  .modal-call__btn-close {
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 24px; }
+  .modal-call__title::before {
+    content: url(./static/highlight.svg);
+    position: absolute;
+    left: 0px; }
+  .modal-call__title {
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 24px; }
+  .modal-call__container {
+    display: flex;
+    flex-direction: column; }
+  .modal-call__tel {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    font: inherit;
+    font-size: 16px;
+    font-style: normal;
+    color: #B5B6BC;
+    border: solid 1px #EAEAEA;
+    border-radius: 8px;
+    resize: none; }
+  .modal-call__article {
+    display: inline-block;
+    white-space: normal;
+    font-size: 14px;
+    font-style: normal;
+    color: #7E7E82; }
+    .modal-call__article span {
+      color: #FF3E79; }
+  .modal-call__btn-send {
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 23px;
+    align-self: flex-end; }
+  .modal-call.active {
+    display: flex; }
+  @media (min-width: 767px) {
+    .modal-call__btn-close {
+      position: absolute;
+      left: -64px;
+      top: 16px; } }
+  @media (min-width: 1365px) {
+    .modal-call {
+      visibility: visible; } }
+
 .language {
   display: flex;
   justify-content: flex-start; }
@@ -250,7 +322,7 @@ button:hover {
 
 .mask {
   display: none;
-  z-index: 11;
+  z-index: 13;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -275,7 +347,7 @@ button:hover {
   background-color: #FFFFFF;
   box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02);
   transition: all 0.3s ease 0s;
-  z-index: 50;
+  z-index: 11;
   overflow: auto;
   white-space: nowrap;
   scrollbar-width: none; }
@@ -524,8 +596,8 @@ button:hover {
   display: flex;
   justify-content: center;
   padding-top: 16px;
-  --swiper-pagination-color: $swiper-page-color;
-  --swiper-pagination-bullet-inactive-color: $swiper-page-color--inactive;
+  --swiper-pagination-color: #B5B6BC;
+  --swiper-pagination-bullet-inactive-color: #DDDDDD;
   --swiper-pagination-bottom: auto;
   --swiper-pagination-bullet-size: 12px; }
 
@@ -627,8 +699,8 @@ button:hover {
   display: flex;
   justify-content: center;
   padding-top: 16px;
-  --swiper-pagination-color: $swiper-page-color;
-  --swiper-pagination-bullet-inactive-color: $swiper-page-color--inactive;
+  --swiper-pagination-color: #B5B6BC;
+  --swiper-pagination-bullet-inactive-color: #DDDDDD;
   --swiper-pagination-bottom: auto;
   --swiper-pagination-bullet-size: 12px; }
 
@@ -810,78 +882,6 @@ button:hover {
   .menu__list {
     margin-bottom: 14.63px; } }
 
-.modal-call {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 320px;
-  height: 100%;
-  background-color: #FFFFFF;
-  box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02);
-  transition: all 0.3s ease 0s;
-  z-index: 12;
-  white-space: nowrap;
-  scrollbar-width: none; }
-  .modal-call .container {
-    width: 90%; }
-  .modal-call__btn-close {
-    border: none;
-    font: inherit;
-    color: inherit;
-    background-color: transparent;
-    cursor: pointer;
-    margin-top: 24px; }
-  .modal-call__title::before {
-    content: url(./static/highlight.svg);
-    position: absolute;
-    left: 0px; }
-  .modal-call__title {
-    font-size: 24px;
-    margin-top: 40px;
-    margin-bottom: 24px; }
-  .modal-call__container {
-    display: flex;
-    flex-direction: column; }
-  .modal-call__tel {
-    display: flex;
-    flex-direction: column;
-    padding: 12px 16px;
-    margin-bottom: 16px;
-    font: inherit;
-    font-size: 16px;
-    font-style: normal;
-    color: #B5B6BC;
-    border: solid 1px #EAEAEA;
-    border-radius: 8px;
-    resize: none; }
-  .modal-call__article {
-    display: inline-block;
-    white-space: normal;
-    font-size: 14px;
-    font-style: normal;
-    color: #7E7E82; }
-    .modal-call__article span {
-      color: #FF3E79; }
-  .modal-call__btn-send {
-    border: none;
-    font: inherit;
-    color: inherit;
-    background-color: transparent;
-    cursor: pointer;
-    margin-top: 23px;
-    align-self: flex-end; }
-  .modal-call.active {
-    display: flex; }
-  @media (min-width: 767px) {
-    .modal-call__btn-close {
-      position: absolute;
-      left: -64px;
-      top: 16px; } }
-  @media (min-width: 1365px) {
-    .modal-call {
-      visibility: visible; } }
-
 .prices__container {
   width: 100%;
   height: 224px; }
@@ -950,8 +950,8 @@ button:hover {
   display: flex;
   justify-content: center;
   padding-top: 16px;
-  --swiper-pagination-color: $swiper-page-color;
-  --swiper-pagination-bullet-inactive-color: $swiper-page-color--inactive;
+  --swiper-pagination-color: #B5B6BC;
+  --swiper-pagination-bullet-inactive-color: #DDDDDD;
   --swiper-pagination-bottom: auto;
   --swiper-pagination-bullet-size: 12px; }
 
