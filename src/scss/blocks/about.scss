@@ -50,4 +50,52 @@
     height: auto;
     width: 100%;
   }
+
+  @media (min-width: 767px) {
+    &__article{
+      height: 155px;
+      margin-right: 24px;
+    }
+
+    &__row{
+      display: flex;
+      justify-content: space-between;    
+      margin: 0 auto;
+      width: 96%;
+      margin-top:32px;
+      margin-bottom:auto;
+    }
+
+    &__picture{
+      max-width: 360px;
+      border-radius: 5px; 
+    }
+  }
+
+  @media (min-width: 1365px) {
+    &__article{
+      height: 155px;
+      margin-right: 24px;
+      vertical-align: text-top;
+    }
+
+    &__row{
+        display: flex;
+        justify-content: space-between;;    
+        margin: 0 auto;
+        width: 97%;
+        margin-top: 19.22px;
+        margin-bottom:auto;
+    }
+
+    &__button{
+        margin-top: 13.78px;
+    }
+    &__picture{
+        max-width: 530px;
+        border-radius: 5px; 
+    }
+  }
+
+
 }

@@ -50,4 +50,12 @@
     padding-left: 16px;
     padding-right: 16px;
   }
+
+  @media (min-width: 1365px) {
+    &__list{
+        margin-bottom: 14.63px;
+    }
+  }
+
+
 }

@@ -80,6 +80,23 @@
         display:flex;
     }
 
+    @media (min-width: 1365px) {
+        visibility: visible;
+        display: flex;
+        position:fixed;
+        box-shadow: none;
+        padding-top: 15px;
+        z-index: 10;
     
+        &__burger{
+            display:  none;
+        }
+        &__label{
+            margin-left: 0;
+        }
+        &__search{
+            margin-left: 132px;
+        }
+    }
 }
 

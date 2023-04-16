@@ -25,3 +25,39 @@ button:hover{
     filter: opacity(50%)
 }
 
+/* Управление направлением стрелок */
+.show__all--bottom::before {
+    content: url('../img/icon.svg');
+    position:relative;
+    margin-right: 16px;
+    z-index: 2;
+}
+
+.show__all--top::before {
+    content: url('../img/icon-2.svg');
+    position:relative;
+    margin-right: 16px;
+    z-index: 2;
+}
+
+@media (min-width: 767px) {
+    body{
+        min-width: 767px;
+    }
+    .container{
+        margin: 0 auto;
+        width: 96%;
+    }
+}
+
+@media (min-width: 1365px) {
+    body{
+        min-width: 1365px;
+    }
+
+    main .container{
+        margin: 0 auto;
+        margin-left: 340px;
+        width: 98%;
+    }
+}

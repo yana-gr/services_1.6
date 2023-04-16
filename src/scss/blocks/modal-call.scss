@@ -82,4 +82,15 @@
         display:flex;
     }
 
+    @media (min-width: 767px) {
+        &__btn-close{
+            position: absolute;
+            left: -64px;
+            top: 16px;
+        }
+    }
+
+    @media (min-width: 1365px) {
+        visibility: visible;
+    }
 }

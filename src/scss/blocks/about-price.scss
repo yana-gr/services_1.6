@@ -1,0 +1,48 @@
+
+.about-price{
+
+  &__row{
+    margin-top: 16px;
+}
+  &__article{
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px;
+    vertical-align: top;
+    text-align: left;
+    height: fit-content;
+    overflow: hidden;
+    letter-spacing: 0.2px;
+  }
+
+  &__button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    margin-top: 16px;
+    margin-bottom: 40px;
+    text-align: start;
+  }
+
+  &__button::after {
+    content: url('../img/Line.svg');
+    position:relative;
+    top: 2px;
+    margin-left: 8px;
+    z-index: 2;
+  }
+
+  @media (min-width: 767px) {
+    &__article{
+      height: 60px;
+      max-width: 421px;
+    }
+  }
+  
+}

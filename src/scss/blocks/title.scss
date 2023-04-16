@@ -43,4 +43,34 @@
       font-style: normal;
     }
   }
+
+  @media (min-width: 767px) {
+    &__raw{
+      margin-bottom: 32px;
+    }
+  }
+
+  @media (min-width: 1365px) {
+    .container {
+      max-width: calc(98vw - 340px);
+    }
+
+    &__text::before{
+      content: url('../img/highlight.svg');
+      position:absolute;
+      left:320px;
+      margin-right: 12px;
+      z-index: 2;
+    }
+
+    &__raw{
+      margin-top: 42px;
+      margin-bottom: 8.37px;
+    }
+  
+    &__buttons{
+      display: flex;
+    }
+  }
+
 }

@@ -23,4 +23,9 @@
   &__text {
     text-decoration: none;
   }
+
+  @media (min-width: 1365px) {
+    display: flex;
+  }
+  
 }
