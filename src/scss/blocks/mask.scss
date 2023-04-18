@@ -7,13 +7,19 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 4;
     background-color: $background-color--other;
     opacity: 96%;
 
-    &--show {
-        display: block;
+    @keyframes ani {
+        0% {opacity: 0;}
+        100% {opacity: 96%;}
     }
+
+    &--show {
+        display:block;
+        animation: ani 1s forwards;
+    }    
 
     @media (min-width: 1365px) {
         visibility: visible;

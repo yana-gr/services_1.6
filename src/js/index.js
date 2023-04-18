@@ -1,18 +1,20 @@
 import '../scss/style.scss'
 
-var   mask = document.querySelector('.mask'),
-  sidebar = document.querySelector('.sidebar'),
-  openSidebar = document.querySelector('.header__burger'),
-  closeSidebar = document.querySelector('.sidebar__burger'),
-  feedback = document.querySelector('.feedback'),
-  openFeedback = document.querySelectorAll('.btn__chat'),
-  closeFeedback = document.querySelector('.feedback__btn-close'),
-  modalCall = document.querySelector('.modal-call'),
-  openModalCall = document.querySelectorAll('.btn__call'),
-  closeModalCall = document.querySelector('.modal-call__btn-close')
+const   mask = document.querySelector('.mask'),
+        sidebar = document.querySelector('.sidebar'),
+        openSidebar = document.querySelector('.header__burger'),
+        closeSidebar = sidebar.querySelector('.sidebar__burger'),
+        feedback = document.querySelector('.feedback'),
+        openFeedback = document.querySelectorAll('.btn__chat'),
+        closeFeedback = feedback.querySelector('.feedback__btn-close'),
+        modalCall = document.querySelector('.modal-call'),
+        openModalCall = document.querySelectorAll('.btn__call'),
+        closeModalCall = modalCall.querySelector('.modal-call__btn-close')
 
 
-  if (document.body.clientWidth < 1365) {
+  const WidthMediaQuerySidebar = window.matchMedia('(max-width: 1365px)')
+  
+  if (WidthMediaQuerySidebar.matches){
 
   // Открытие/закрытие бокового меню
   openSidebar.addEventListener('click', function (evt) {
@@ -56,6 +58,8 @@ for (let i = 0; i < openFeedback.length; i = i + 1){
     sidebar.classList.remove('sidebar--show');
     mask.classList.add('mask--show');
     modalCall.classList.remove('sidebar--show');
+    const feedback_input = feedback.querySelector('.feedback__name');
+    feedback_input.focus()
   });
 }
 
@@ -81,6 +85,8 @@ for (let i = 0; i < openModalCall.length; i = i + 1){
     sidebar.classList.remove('sidebar--show');
     mask.classList.add('mask--show');
     feedback.classList.remove('sidebar--show');
+    const modalCall_input = modalCall.querySelector('.modal-call__tel');
+    modalCall_input.focus()
   });
 }
 
@@ -98,7 +104,10 @@ document.addEventListener('keydown', function (evt) {
 });
 
 // Слайдер
-if (document.body.clientWidth < 767) {
+
+const WidthMediaQuerySwiper = window.matchMedia('(max-width: 767px)')
+  
+if (WidthMediaQuerySwiper.matches){
   const swiper = new Swiper('.brands__container', {
     slidesPerView: 5,
     // Optional parameters
@@ -110,7 +119,7 @@ if (document.body.clientWidth < 767) {
   });
 }
 
-if (document.body.clientWidth < 767) {
+if (WidthMediaQuerySwiper.matches){
   const swiper = new Swiper('.devices__container', {
     slidesPerView: 3,
     // Optional parameters
@@ -122,7 +131,7 @@ if (document.body.clientWidth < 767) {
   });
 } 
 
-if (document.body.clientWidth < 767) {
+  if (WidthMediaQuerySwiper.matches){
   const swiper = new Swiper('.prices__container', {
     slidesPerView: 2,
     // Optional parameters
@@ -136,8 +145,8 @@ if (document.body.clientWidth < 767) {
 
 
 //Скрытие/раскрытие "Читать далее"
-var buttonReadNext = document.querySelector('.about__button');
-var showAllText = document.querySelector('.about__article');
+const buttonReadNext = document.querySelector('.about__button');
+const showAllText = document.querySelector('.about__article');
 
 buttonReadNext.addEventListener('click', function (evt) {
   evt.preventDefault();
@@ -156,8 +165,8 @@ buttonReadNext.addEventListener('click', function (evt) {
 
 
 //Скрытие/раскрытие "Показать все бренды"
-var buttonShowAll = document.querySelector('.brands__all');
-var showAllBrands = document.querySelector('.brands__container');
+const buttonShowAll = document.querySelector('.brands__all');
+const showAllBrands = document.querySelector('.brands__container');
 
 buttonShowAll.addEventListener('click', function (evt) {
   evt.preventDefault();
@@ -175,8 +184,8 @@ buttonShowAll.addEventListener('click', function (evt) {
 });
 
 //Скрытие/раскрытие "Показать все услуги"
-var buttonShowAllDevices = document.querySelector('.devices__all');
-var showAllDevices = document.querySelector('.devices__container');
+const buttonShowAllDevices = document.querySelector('.devices__all');
+const showAllDevices = document.querySelector('.devices__container');
 
 buttonShowAllDevices.addEventListener('click', function (evt) {
   evt.preventDefault();
@@ -193,4 +202,3 @@ buttonShowAllDevices.addEventListener('click', function (evt) {
   }
 });
 
-console.log('Works!')

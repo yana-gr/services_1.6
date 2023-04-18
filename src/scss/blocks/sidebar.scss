@@ -52,7 +52,7 @@
     &__list{
         display: flex;
         flex-direction: column;
-        padding-top: 110px;
+        margin-top: 110px;
 
         li{
             list-style: none;
@@ -67,8 +67,9 @@
         font-weight: 500;
     }
 
-    &__link:hover::before{
+    &__link:active::before{
         content: url('../img/highlight.svg');
+        color: $link--active;
         position:absolute;
         left:0px;
         margin-top: -10px;
@@ -78,9 +79,15 @@
         color: $text--other;
     }
 
+    @keyframes ani {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+
     &--show {
         display:flex;
-    }
+        animation: ani 1s forwards;
+    }    
 
     &.active{
         display:flex;

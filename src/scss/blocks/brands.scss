@@ -19,21 +19,28 @@
       display:flex;
       justify-content: space-between;
       align-items: center;
-      border: 1px solid $border-color--inputs;
-      border-radius: 6px;
       margin-right: 16px;
-      margin-top: 16px;
-      padding: 0 16px;
       flex-basis: 240px;
-      height: 72px;
-      background-color: $background-color--other;
     }
   }
 
   &__button{
     background-color: transparent;
     border: transparent;
+    box-sizing: border-box;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid $border-color--inputs;
+    border-radius: 6px;
+    margin-top: 16px;
+    padding: 0 16px;
+    flex-basis: 240px;
+    height: 72px;
+    background-color: $background-color--other;
+
   }
+
 
   &__all{
     display: none;
