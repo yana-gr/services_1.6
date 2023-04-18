@@ -328,11 +328,25 @@ button:hover {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 4;
   background-color: #FFFFFF;
   opacity: 96%; }
+
+@-webkit-keyframes ani {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 96%; } }
+
+@keyframes ani {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 96%; } }
   .mask--show {
-    display: block; }
+    display: block;
+    -webkit-animation: ani 1s forwards;
+            animation: ani 1s forwards; }
   @media (min-width: 1365px) {
     .mask {
       visibility: visible; } }
@@ -380,7 +394,7 @@ button:hover {
   .sidebar__list {
     display: flex;
     flex-direction: column;
-    padding-top: 110px; }
+    margin-top: 110px; }
     .sidebar__list li {
       list-style: none;
       font-size: 16px;
@@ -389,16 +403,25 @@ button:hover {
     text-decoration: none;
     color: #1B1C21;
     font-weight: 500; }
-  .sidebar__link:hover::before {
+  .sidebar__link:active::before {
     content: url(./static/highlight.svg);
+    color: #FF3E79;
     position: absolute;
     left: 0px;
     margin-top: -10px;
     z-index: 2; }
   .sidebar__link:hover {
     color: #7E7E82; }
+
+@keyframes ani {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
   .sidebar--show {
-    display: flex; }
+    display: flex;
+    -webkit-animation: ani 1s forwards;
+            animation: ani 1s forwards; }
   .sidebar.active {
     display: flex; }
   @media (min-width: 1365px) {
@@ -545,18 +568,23 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #EAEAEA;
-    border-radius: 6px;
     margin-right: 16px;
-    margin-top: 16px;
-    padding: 0 16px;
-    flex-basis: 240px;
-    height: 72px;
-    background-color: #FFFFFF; }
+    flex-basis: 240px; }
 
 .brands__button {
   background-color: transparent;
-  border: transparent; }
+  border: transparent;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #EAEAEA;
+  border-radius: 6px;
+  margin-top: 16px;
+  padding: 0 16px;
+  flex-basis: 240px;
+  height: 72px;
+  background-color: #FFFFFF; }
 
 .brands__all {
   display: none;
