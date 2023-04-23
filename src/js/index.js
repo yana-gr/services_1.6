@@ -14,29 +14,34 @@ const   mask = document.querySelector('.mask'),
 
   const WidthMediaQuerySidebar = window.matchMedia('(max-width: 1365px)')
   
-  if (WidthMediaQuerySidebar.matches){
+if (WidthMediaQuerySidebar.matches){
 
   // Открытие/закрытие бокового меню
-  openSidebar.addEventListener('click', function (evt) {
+
+  function openSidebarFunc(evt) {
     evt.preventDefault();
     sidebar.classList.add('sidebar--show');
     feedback.classList.remove('sidebar--show');
     mask.classList.add('mask--show');
     modalCall.classList.remove('sidebar--show');
-  });
+  };
+  openSidebar.addEventListener('click', openSidebarFunc);
 
-  closeSidebar.addEventListener('click', function (evt) {
+  function closeSidebarFunc(evt) {
     evt.preventDefault();
     sidebar.classList.remove('sidebar--show');
     mask.classList.remove('mask--show');
-  });
+  };
+  closeSidebar.addEventListener('click', closeSidebarFunc)
 
-  document.addEventListener('keydown', function (evt) {
+
+  function closeEscSidebarFunc(evt) {
     if (evt.key === "Escape") {
       sidebar.classList.remove('sidebar--show');
       mask.classList.remove('mask--show');
     }
-  });
+  };
+  document.addEventListener('keydown', closeEscSidebarFunc);
 }
 
 // Закрытие при клике ВНЕ окна
@@ -51,57 +56,62 @@ mask.addEventListener('click', (evt) => {
 });
 
 // Открытие/закрытие Обратная связь
-for (let i = 0; i < openFeedback.length; i = i + 1){
-  openFeedback[i].addEventListener('click', function (evt) {
-    evt.preventDefault();
-    feedback.classList.add('sidebar--show');
-    sidebar.classList.remove('sidebar--show');
-    mask.classList.add('mask--show');
-    modalCall.classList.remove('sidebar--show');
-    const feedback_input = feedback.querySelector('.feedback__name');
-    feedback_input.focus()
-  });
-}
 
-closeFeedback.addEventListener('click', function (evt) {
+function openFeedbackFunc (evt) {
+  evt.preventDefault();
+  feedback.classList.add('sidebar--show');
+  sidebar.classList.remove('sidebar--show');
+  mask.classList.add('mask--show');
+  modalCall.classList.remove('sidebar--show');
+  const feedback_input = feedback.querySelector('.feedback__name');
+  feedback_input.focus()
+};
+openFeedback.forEach((btn) =>{btn.addEventListener('click', openFeedbackFunc)});
+
+function closeFeedbackFunc (evt) {
   evt.preventDefault();
   feedback.classList.remove('sidebar--show');
   mask.classList.remove('mask--show')
-});
+};
+closeFeedback.addEventListener('click', closeFeedbackFunc);
 
-document.addEventListener('keydown', function (evt) {
+
+function closeEscFeedbackFunc (evt) {
   if (evt.key === "Escape") {
     feedback.classList.remove('sidebar--show');
     mask.classList.remove('mask--show')
   }
-});
+};
+document.addEventListener('keydown', closeEscFeedbackFunc);
 
 // Открытие/закрытие Звонок
 
-for (let i = 0; i < openModalCall.length; i = i + 1){
-  openModalCall[i].addEventListener('click', function (evt) {
-    evt.preventDefault();
-    modalCall.classList.add('sidebar--show');
-    sidebar.classList.remove('sidebar--show');
-    mask.classList.add('mask--show');
-    feedback.classList.remove('sidebar--show');
-    const modalCall_input = modalCall.querySelector('.modal-call__tel');
-    modalCall_input.focus()
-  });
-}
+function openModalCallFunc (evt) {
+  evt.preventDefault();
+  modalCall.classList.add('sidebar--show');
+  sidebar.classList.remove('sidebar--show');
+  mask.classList.add('mask--show');
+  feedback.classList.remove('sidebar--show');
+  const modalCall_input = modalCall.querySelector('.modal-call__tel');
+  modalCall_input.focus()
+};
+openModalCall.forEach((btn) =>{btn.addEventListener('click', openModalCallFunc)});
 
-closeModalCall.addEventListener('click', function (evt) {
+function closeModalCallFunc (evt) {
   evt.preventDefault();
   modalCall.classList.remove('sidebar--show');
   mask.classList.remove('mask--show')
-});
+};
+closeModalCall.addEventListener('click', closeModalCallFunc)
 
-document.addEventListener('keydown', function (evt) {
+
+function closeEscModalCallFunc (evt) {
   if (evt.key === "Escape") {
     modalCall.classList.remove('sidebar--show');
     mask.classList.remove('mask--show')
   }
-});
+};
+document.addEventListener('keydown', closeEscModalCallFunc);
 
 // Слайдер
 
